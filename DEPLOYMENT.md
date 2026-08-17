@@ -92,6 +92,7 @@ Set these in the Render dashboard (Service → Environment) or the blueprint. Va
 | `RAILS_HOST` | `store.example.com` | Public host for generated URLs (image URLs in API responses, email links). Falls back to `RENDER_EXTERNAL_HOSTNAME` when unset — set it once you add a custom domain. |
 | `RAILS_LOG_LEVEL` | `info` | Already in `render.yaml`. |
 | `MISSION_CONTROL_USER` / `MISSION_CONTROL_PASSWORD` | *(auto-generated)* | HTTP Basic auth for the `/jobs` dashboard. Already in `render.yaml`. |
+| `JWT_SECRET_KEY` | *(generate, e.g. `bin/rails secret`)* | Dedicated key for signing customer auth tokens. Unset, Spree falls back to `SECRET_KEY_BASE` (works, but a separate key is best practice — see the boot log warning). |
 
 ### Optional
 

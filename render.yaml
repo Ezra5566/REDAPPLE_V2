@@ -1,8 +1,16 @@
 # Render Blueprint — one Docker web service plus Postgres. The web service
 # builds backend/Dockerfile with the repo root as context: your backend and
 # apps/dashboard ship in one image, with the dashboard served same-origin at
-# /dashboard (the stock dashboard when apps/dashboard is absent). Migrations
-# run from the image entrypoint on boot.
+# /dashboard (the stock dashboard when apps/dashboard is absent).
+#
+# Production notes:
+#   - Migrations/upgrades run in the release phase (preDeployCommand), once per
+#     deploy before the new version takes traffic — the image entrypoint's
+#     db:prepare stays as a first-boot fallback.
+#   - plan: free is for evaluation only. Free Postgres expires 30 days after
+#     creation (data loss) and free web instances (512 MB, sleeps after 15 min
+#     idle) are too small for Spree + the in-process job supervisor — upgrade
+#     both before going live.
 services:
   - type: web
     name: spree
@@ -11,6 +19,9 @@ services:
     dockerfilePath: ./backend/Dockerfile
     dockerContext: .
     healthCheckPath: /up
+    # Release phase: copy Spree's gem migrations into db/migrate, run them,
+    # then apply pending Spree upgrade manifests (idempotent).
+    preDeployCommand: bundle exec rake spree:install:migrations db:migrate && bundle exec rake spree:upgrade
     envVars:
       - key: DATABASE_URL
         fromDatabase:
