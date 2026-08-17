@@ -67,7 +67,7 @@ Set these in the Render dashboard (Service → Environment) or the blueprint. Va
 | Variable | Value | Notes |
 |---|---|---|
 | `DATABASE_URL` | *(auto from Render Postgres addon)* | Already wired in `render.yaml`. |
-| `SECRET_KEY_BASE` | *(auto-generated)* | Already in `render.yaml`. Must stay stable — don't regenerate after launch (cookies/sessions depend on it). |
+| `SECRET_KEY_BASE` | *(auto-generated, then PIN it)* | `render.yaml` generates it once — **but re-importing the blueprint or recreating the service regenerates it**, which silently breaks every signed URL (image URLs, cart/session tokens). After first deploy, copy the generated value and set it as a literal so it can never rotate. |
 | `RAILS_ENV` | `production` | Already set by the Dockerfile. |
 
 ### Required for production functionality (not yet in the blueprint)
@@ -232,6 +232,7 @@ Run these once the web service reports healthy (`GET /up` → 200).
 |---|---|
 | Every API request 404s (`ActiveRecord::RecordNotFound`) | No `Spree::Store` record — run the create snippet in §4 step 1. |
 | Images upload but don't display | ActiveStorage on local disk (ephemeral) — set S3/R2; or bucket policy blocks public/signed URLs. |
+| Product/category data shows but **every image 500s/422s** on `…/rails/active_storage/representations/proxy/…` | Stale signed URLs — `SECRET_KEY_BASE` changed after the frontend pages were built/cached. Pin `SECRET_KEY_BASE` (see §1), redeploy Vercel to regenerate URLs, hard-refresh. Verify: `rails runner` round-trip of `cdn_image_url` (see the image-troubleshooting notes). **Also check: is Vercel's `SPREE_API_URL` pointing at the same Render service you're actually working in?** Recreating the service (e.g. a "v2") changes both its host and its `SECRET_KEY_BASE` — the storefront must be repointed at the new host and redeployed, and the old service deleted. |
 | Webhooks never arrive / emails missing | `SPREE_WEBHOOK_SECRET` mismatch, endpoint not created in Spree admin, or Vercel env missing. |
 | Storefront build fails on Vercel | Backend not deployed/reachable yet — deploy Render first, then set `SPREE_API_URL` + `SPREE_PUBLISHABLE_KEY`. |
 | Checkout is slow / fails at night | Backend on the free plan is asleep or OOM — upgrade. |
