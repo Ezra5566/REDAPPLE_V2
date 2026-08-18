@@ -90,7 +90,7 @@ export default async function PolicyPage({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">{policy.name}</h1>
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">{policy.name}</h1>
       {policy.body_html ? (
         <div
           className="prose prose-gray"
@@ -101,7 +101,7 @@ export default async function PolicyPage({
           {policy.body}
         </div>
       ) : (
-        <p className="text-gray-500">{t("noContent")}</p>
+        <p className="text-gray-500 dark:text-gray-400">{t("noContent")}</p>
       )}
     </div>
   );

@@ -13,19 +13,19 @@ export function OrderTotals({ order }: OrderTotalsProps) {
   return (
     <div className="space-y-2">
       <div className="flex justify-between text-sm">
-        <span className="text-gray-500">{t("subtotal")}</span>
-        <span className="text-gray-900">{order.display_item_total}</span>
+        <span className="text-gray-500 dark:text-gray-400">{t("subtotal")}</span>
+        <span className="text-gray-900 dark:text-white">{order.display_item_total}</span>
       </div>
 
       <div className="flex justify-between text-sm">
-        <span className="text-gray-500">{t("shipping")}</span>
-        <span className="text-gray-900">{order.display_delivery_total}</span>
+        <span className="text-gray-500 dark:text-gray-400">{t("shipping")}</span>
+        <span className="text-gray-900 dark:text-white">{order.display_delivery_total}</span>
       </div>
 
       {order.discount_total &&
         Number.parseFloat(order.discount_total) !== 0 && (
           <div className="flex justify-between text-sm">
-            <span className="text-gray-500">{t("discount")}</span>
+            <span className="text-gray-500 dark:text-gray-400">{t("discount")}</span>
             <span className="text-green-600">
               {order.display_discount_total}
             </span>
@@ -34,14 +34,14 @@ export function OrderTotals({ order }: OrderTotalsProps) {
 
       {Number.parseFloat(order.tax_total ?? "0") > 0 && (
         <div className="flex justify-between text-sm">
-          <span className="text-gray-500">{t("tax")}</span>
-          <span className="text-gray-900">{order.display_tax_total}</span>
+          <span className="text-gray-500 dark:text-gray-400">{t("tax")}</span>
+          <span className="text-gray-900 dark:text-white">{order.display_tax_total}</span>
         </div>
       )}
 
-      <div className="flex justify-between pt-2 border-t border-gray-200">
-        <span className="font-semibold text-gray-900">{t("total")}</span>
-        <span className="font-semibold text-gray-900">
+      <div className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-800">
+        <span className="font-semibold text-gray-900 dark:text-white">{t("total")}</span>
+        <span className="font-semibold text-gray-900 dark:text-white">
           {order.display_total}
         </span>
       </div>
@@ -49,7 +49,7 @@ export function OrderTotals({ order }: OrderTotalsProps) {
       {order.gift_card &&
       Number.parseFloat(order.gift_card_total ?? "0") > 0 ? (
         <div className="flex justify-between text-sm">
-          <span className="text-gray-500">{t("giftCard")}</span>
+          <span className="text-gray-500 dark:text-gray-400">{t("giftCard")}</span>
           <span className="text-green-600">
             -{order.display_gift_card_total}
           </span>
@@ -57,7 +57,7 @@ export function OrderTotals({ order }: OrderTotalsProps) {
       ) : order.store_credit_total &&
         Number.parseFloat(order.store_credit_total) > 0 ? (
         <div className="flex justify-between text-sm">
-          <span className="text-gray-500">{t("storeCredit")}</span>
+          <span className="text-gray-500 dark:text-gray-400">{t("storeCredit")}</span>
           <span className="text-green-600">
             -{order.display_store_credit_total}
           </span>
@@ -66,11 +66,11 @@ export function OrderTotals({ order }: OrderTotalsProps) {
 
       {Number.parseFloat(order.amount_due ?? "0") > 0 &&
         order.amount_due !== order.total && (
-          <div className="flex justify-between pt-2 border-t border-gray-200">
-            <span className="font-semibold text-gray-900">
+          <div className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-800">
+            <span className="font-semibold text-gray-900 dark:text-white">
               {t("amountDue")}
             </span>
-            <span className="font-semibold text-gray-900">
+            <span className="font-semibold text-gray-900 dark:text-white">
               {order.display_amount_due}
             </span>
           </div>

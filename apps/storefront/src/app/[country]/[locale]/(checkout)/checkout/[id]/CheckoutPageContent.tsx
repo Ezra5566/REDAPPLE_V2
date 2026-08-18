@@ -766,7 +766,7 @@ function CheckoutPageContentInner({
           type="button"
           onClick={validateAndPay}
           disabled={processing}
-          className="w-full mt-8 h-[54px] bg-black text-white text-sm font-bold rounded-sm hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+          className="w-full mt-8 h-[54px] bg-primary text-white text-sm font-bold rounded-sm hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
         >
           {processing ? (
             <>

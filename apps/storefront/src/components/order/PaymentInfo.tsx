@@ -23,13 +23,13 @@ export function PaymentInfo({ payment, storeCreditLabel }: PaymentInfoProps) {
           width={40}
         />
         <div>
-          <p className="text-sm font-medium text-gray-900">
+          <p className="text-sm font-medium text-gray-900 dark:text-white">
             {t("cardEndingIn", {
               label: getCardLabel(card.brand),
               digits: card.last4,
             })}
           </p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
             {t("cardExpires", {
               month: String(card.month).padStart(2, "0"),
               year: card.year,
@@ -45,7 +45,7 @@ export function PaymentInfo({ payment, storeCreditLabel }: PaymentInfoProps) {
     const label = storeCreditLabel || t("storeCredit");
     return (
       <div>
-        <p className="text-sm font-medium text-gray-900">{label}</p>
+        <p className="text-sm font-medium text-gray-900 dark:text-white">{label}</p>
         <p className="text-xs text-gray-500">
           {t("storeCreditApplied", {
             amount: payment.display_amount ?? "",
@@ -58,10 +58,10 @@ export function PaymentInfo({ payment, storeCreditLabel }: PaymentInfoProps) {
 
   return (
     <div>
-      <p className="text-sm font-medium text-gray-900">
+      <p className="text-sm font-medium text-gray-900 dark:text-white">
         {payment.payment_method?.name}
       </p>
-      <p className="text-xs text-gray-500">{payment.display_amount}</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400">{payment.display_amount}</p>
     </div>
   );
 }

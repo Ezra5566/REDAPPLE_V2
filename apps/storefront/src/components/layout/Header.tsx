@@ -7,6 +7,7 @@ import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 import { CartButton } from "@/components/layout/CartButton";
 import { SearchToggle } from "@/components/layout/SearchToggle";
+import { DarkModeLogo } from "@/components/ui/dark-mode-logo";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { isWholesaleEnabled } from "@/lib/spree";
@@ -74,8 +75,9 @@ export async function Header({
       left={mobileNavigation}
       center={
         <Link href={basePath || "/"} className="flex items-center min-w-0">
-          <Image
-            src="/REDAPPLEKE/redapplekenobg.png"
+          <DarkModeLogo
+            lightSrc="/REDAPPLEKE/redapplekenobg.png"
+            darkSrc="/REDAPPLEKE/redapplekenobg.png"
             alt={storeName}
             width={98}
             height={40}

@@ -187,10 +187,10 @@ async function ProductListingInner({
             className="mx-auto h-12 w-12 text-gray-400"
             strokeWidth={1.5}
           />
-          <h3 className="mt-4 text-lg font-medium text-gray-900">
+          <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">
             {t("noProductsFound")}
           </h3>
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-gray-500 dark:text-gray-400">
             {emptyMessage ?? t("tryAdjustingFilters")}
           </p>
         </div>

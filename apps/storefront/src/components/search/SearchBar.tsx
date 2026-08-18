@@ -214,7 +214,7 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
                       }`}
                     >
                       {/* Thumbnail */}
-                      <div className="relative w-10 h-10 bg-gray-100 rounded flex-shrink-0 overflow-hidden">
+                      <div className="relative w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded flex-shrink-0 overflow-hidden">
                         <ProductImage
                           src={product.thumbnail_url}
                           alt={product.name}
@@ -225,11 +225,11 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
                       </div>
                       {/* Name and price */}
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-gray-900 truncate">
+                        <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
                           {product.name}
                         </p>
                         {product.price?.display_amount && (
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
                             {product.price.display_amount}
                           </p>
                         )}
@@ -249,7 +249,7 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
                         setIsOpen(false);
                         onNavigate?.();
                       }}
-                      className="w-full p-3 text-sm text-primary hover:bg-gray-50 text-center font-medium"
+                      className="w-full p-3 text-sm text-primary hover:bg-gray-50 dark:hover:bg-gray-800 text-center font-medium"
                     >
                       {t("viewAllResultsFor", { query: query.trim() })}
                     </button>

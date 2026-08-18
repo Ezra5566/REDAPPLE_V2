@@ -87,11 +87,11 @@ export function MobileMenu({
 
   // Shared link style
   const linkClass =
-    "text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2.5 text-base transition-colors";
+    "text-left text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg px-3 py-2.5 text-base transition-colors";
 
   // Shared button style for items with children (chevron)
   const categoryButtonClass =
-    "flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg px-3 py-2.5 text-base transition-colors";
+    "flex items-center justify-between w-full text-left text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg px-3 py-2.5 text-base transition-colors";
 
   return (
     <Sheet open={open} onOpenChange={handleOpenChange}>
@@ -168,7 +168,7 @@ export function MobileMenu({
           <button
             type="button"
             onClick={popPanel}
-            className={`flex items-center gap-2 text-gray-700 hover:text-gray-900 text-base font-semibold cursor-pointer transition-all duration-300 ease-in-out absolute left-4 ${
+            className={`flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white text-base font-semibold cursor-pointer transition-all duration-300 ease-in-out absolute left-4 ${
               currentPanel.kind !== "main"
                 ? "translate-x-0 opacity-100"
                 : "translate-x-8 opacity-0 pointer-events-none"
@@ -292,7 +292,7 @@ export function MobileMenu({
                   <button
                     type="button"
                     onClick={popPanel}
-                    className="flex items-center gap-2 text-gray-700 hover:text-gray-900 py-2 text-base font-medium"
+                    className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white py-2 text-base font-medium"
                   >
                     <ArrowLeft className="w-5 h-5" />
                     <span>{panel.category.name}</span>
@@ -332,7 +332,7 @@ export function MobileMenu({
                   <Link
                     href={`${basePath}/c/${panel.category.permalink}`}
                     onClick={() => handleOpenChange(false)}
-                    className="block w-full text-center text-sm text-gray-500 hover:text-gray-900 py-2 transition-colors"
+                    className="block w-full text-center text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white py-2 transition-colors"
                   >
                     {t("viewAllCategory", { category: panel.category.name })}
                   </Link>

@@ -261,13 +261,13 @@ export function AddressSection({
       {/* Contact section */}
       <div className="mb-6">
         <div className="flex items-baseline justify-between mb-3">
-          <h2 className="text-lg font-bold text-gray-900">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">
             {t("contactInformation")}
           </h2>
           {!isAuthenticated && (
             <Link
               href={signInUrl}
-              className="text-[13px] text-gray-700 underline underline-offset-2 hover:text-black"
+              className="text-[13px] text-gray-700 dark:text-gray-300 underline underline-offset-2 hover:text-black dark:hover:text-white"
             >
               {t("signIn")}
             </Link>
@@ -284,7 +284,7 @@ export function AddressSection({
           placeholder={t("emailAddress")}
         />
         {hasAccountEmail && (
-          <p className="text-xs text-gray-500 mt-1.5">
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
             {t("usingAccountEmail")}
           </p>
         )}
@@ -293,7 +293,7 @@ export function AddressSection({
       {/* Delivery section */}
       <div>
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-lg font-bold text-gray-900">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white">
             {t("shippingAddress")}
           </h2>
           {saving && (

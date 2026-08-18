@@ -189,7 +189,7 @@ export default function AccountPage() {
   return (
     <AccountShell>
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
           {t("accountOverview")}
         </h1>
 
@@ -200,8 +200,7 @@ export default function AccountPage() {
                 <div className="p-3 bg-gray-100 rounded-xl">
                   <ShoppingBag className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h2 className="text-lg font-medium text-gray-900">
+                <div>                   <h2 className="text-lg font-medium text-gray-900 dark:text-white">
                     {t("orderHistory")}
                   </h2>
                   <p className="mt-1 text-sm text-gray-500">
@@ -218,8 +217,7 @@ export default function AccountPage() {
                 <div className="p-3 bg-gray-100 rounded-xl">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h2 className="text-lg font-medium text-gray-900">
+                <div>                   <h2 className="text-lg font-medium text-gray-900 dark:text-white">
                     {t("addresses")}
                   </h2>
                   <p className="mt-1 text-sm text-gray-500">
@@ -236,8 +234,7 @@ export default function AccountPage() {
                 <div className="p-3 bg-gray-100 rounded-xl">
                   <CreditCard className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h2 className="text-lg font-medium text-gray-900">
+                <div>                   <h2 className="text-lg font-medium text-gray-900 dark:text-white">
                     {t("paymentMethods")}
                   </h2>
                   <p className="mt-1 text-sm text-gray-500">
@@ -254,8 +251,7 @@ export default function AccountPage() {
                 <div className="p-3 bg-gray-100 rounded-xl">
                   <User className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h2 className="text-lg font-medium text-gray-900">
+                <div>                   <h2 className="text-lg font-medium text-gray-900 dark:text-white">
                     {t("profile")}
                   </h2>
                   <p className="mt-1 text-sm text-gray-500">

@@ -33,7 +33,7 @@ export function PolicyConsent({
       />
       <label
         htmlFor="policy-consent"
-        className={cn("text-sm", error ? "text-red-500" : "text-gray-900")}
+        className={cn("text-sm", error ? "text-red-500" : "text-gray-900 dark:text-white")}
       >
         {t("iAgreeToThe")}{" "}
         {CONSENT_POLICIES.map((policy, index) => (

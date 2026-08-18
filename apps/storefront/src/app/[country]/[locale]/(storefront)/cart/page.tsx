@@ -74,10 +74,10 @@ export default function CartPage() {
             className="w-24 h-24 text-gray-300 mx-auto"
             strokeWidth={1}
           />
-          <h1 className="mt-4 text-2xl font-bold text-gray-900">
+          <h1 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">
             {t("emptyCart")}
           </h1>
-          <p className="mt-2 text-gray-500">{t("emptyCartDescription")}</p>
+          <p className="mt-2 text-gray-500 dark:text-gray-400">{t("emptyCartDescription")}</p>
           <div className="mt-6">
             <Button size="lg" asChild>
               <Link href={`${basePath}/products`}>
@@ -209,10 +209,10 @@ export default function CartPage() {
                 cart.amount_due !== cart.total &&
                 parseFloat(cart.amount_due) > 0 && (
                   <div className="border-t pt-4 flex justify-between">
-                    <dt className="text-lg font-medium text-gray-900">
+                    <dt className="text-lg font-medium text-gray-900 dark:text-white">
                       {t("amountDue")}
                     </dt>
-                    <dd className="text-lg font-bold text-gray-900">
+                    <dd className="text-lg font-bold text-gray-900 dark:text-white">
                       {cart.display_amount_due}
                     </dd>
                   </div>

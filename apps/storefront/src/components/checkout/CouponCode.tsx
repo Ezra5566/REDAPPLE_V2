@@ -102,13 +102,13 @@ export function CouponCode({
           {couponPromotions.map((promotion) => (
             <div
               key={promotion.id}
-              className="flex items-center justify-between rounded-sm border border-gray-200 bg-gray-50 px-3 py-2"
+              className="flex items-center justify-between rounded-sm border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-neutral-900 px-3 py-2"
             >
               <div className="flex items-center gap-2 text-sm">
-                <span className="font-medium text-gray-900">
+                <span className="font-medium text-gray-900 dark:text-white">
                   {promotion.code || promotion.name}
                 </span>
-                <span className="text-gray-500">
+                <span className="text-gray-500 dark:text-gray-400">
                   {promotion.display_amount}
                 </span>
               </div>

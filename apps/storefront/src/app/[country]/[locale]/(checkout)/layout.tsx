@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowLeft, ChevronDown, ShoppingBag } from "lucide-react";
-import Image from "next/image";
+import { DarkModeLogo } from "@/components/ui/dark-mode-logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -25,8 +25,9 @@ function CheckoutHeader() {
   return (
     <header className="flex items-center justify-between h-16">
       <Link href={basePath || "/"} className="flex items-center space-x-2">
-        <Image
-          src="/REDAPPLEKE/redapplekenobg.png"
+        <DarkModeLogo
+          lightSrc="/REDAPPLEKE/redapplekenobg.png"
+          darkSrc="/REDAPPLEKE/redapplekenobg.png"
           alt={storeName}
           width={98}
           height={40}
