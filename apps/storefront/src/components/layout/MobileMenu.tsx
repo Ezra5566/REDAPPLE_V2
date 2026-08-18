@@ -195,7 +195,7 @@ export function MobileMenu({
         <div className="relative flex-1 overflow-hidden">
           {/* Main menu panel */}
           <div
-            className={`absolute inset-0 flex flex-col bg-white transition-transform duration-300 ease-in-out ${
+            className={`absolute inset-0 flex flex-col bg-white dark:bg-neutral-950 transition-transform duration-300 ease-in-out ${
               animatedIndex === 0 && currentPanel.kind === "main"
                 ? "translate-x-0"
                 : "-translate-x-full"
@@ -285,7 +285,7 @@ export function MobileMenu({
             return (
               <div
                 key={`cat-${panel.category.id}-${index}`}
-                className={`absolute inset-0 flex flex-col bg-white transition-transform duration-300 ease-in-out ${translateClass}`}
+                className={`absolute inset-0 flex flex-col bg-white dark:bg-neutral-950 transition-transform duration-300 ease-in-out ${translateClass}`}
               >
                 {/* Back button (mobile only — desktop uses the global header) */}
                 <div className="md:hidden px-4 py-2 border-b border-gray-200">

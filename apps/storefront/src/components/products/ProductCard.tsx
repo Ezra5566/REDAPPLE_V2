@@ -63,7 +63,7 @@ export const ProductCard = memo(function ProductCard({
   return (
     <div className="group relative">
       {/* Image */}
-      <div className="relative aspect-square bg-gray-100 rounded-md overflow-hidden">
+      <div className="relative aspect-square bg-gray-100 dark:bg-gray-800 rounded-md overflow-hidden">
         <ProductImage
           src={imageUrl}
           alt={product.name}
@@ -82,7 +82,7 @@ export const ProductCard = memo(function ProductCard({
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
           {/* Stretched link: the ::after overlay keeps the whole card clickable
               without wrapping the content in an <a> — HiddenPricePrompt renders
               its own link, and anchors can't nest. */}
@@ -97,7 +97,7 @@ export const ProductCard = memo(function ProductCard({
 
         <div className="mt-2 flex items-center gap-2">
           {displayPrice ? (
-            <span className="text-lg font-semibold text-gray-900">
+            <span className="text-lg font-semibold text-gray-900 dark:text-white">
               {displayPrice}
             </span>
           ) : (
@@ -106,14 +106,14 @@ export const ProductCard = memo(function ProductCard({
             <HiddenPricePrompt />
           )}
           {onSale && strikethroughPrice && (
-            <span className="text-sm text-gray-500 line-through">
+            <span className="text-sm text-gray-500 dark:text-gray-400 line-through">
               {strikethroughPrice}
             </span>
           )}
         </div>
 
         {!product.purchasable && (
-          <span className="mt-2 text-sm text-gray-500">{t("outOfStock")}</span>
+          <span className="mt-2 text-sm text-gray-500 dark:text-gray-400">{t("outOfStock")}</span>
         )}
       </div>
     </div>

@@ -663,15 +663,15 @@ export function PaymentSection({
   if (isZeroAmount) {
     return (
       <div>
-        <h2 className="text-lg font-bold text-gray-900">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           {t("paymentMethod")}
         </h2>
-        <div className="mt-2 rounded-sm border bg-gray-50 px-4 py-6 text-center">
+        <div className="mt-2 rounded-sm border bg-gray-50 dark:bg-neutral-900 px-4 py-6 text-center">
           <Info
             className="w-8 h-8 text-gray-300 mx-auto mb-2"
             strokeWidth={1.5}
           />
-          <p className="text-sm text-gray-600">{t("noPaymentRequired")}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">{t("noPaymentRequired")}</p>
         </div>
 
         {/* Billing address */}
@@ -683,7 +683,7 @@ export function PaymentSection({
                 handleUseShippingChange(checked === true)
               }
             />
-            <span className="text-sm text-gray-900">{t("sameAsShipping")}</span>
+            <span className="text-sm text-gray-900 dark:text-white">{t("sameAsShipping")}</span>
           </label>
           {!useShippingForBilling && (
             <div className="mt-4">
@@ -706,7 +706,7 @@ export function PaymentSection({
   if (paymentMethods.length === 0) {
     return (
       <div>
-        <h2 className="text-lg font-bold text-gray-900">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           {t("paymentMethod")}
         </h2>
         <div className="mt-2 rounded-sm border bg-gray-50 px-4 py-8 text-center">
@@ -714,7 +714,7 @@ export function PaymentSection({
             className="w-10 h-10 text-gray-300 mx-auto mb-3"
             strokeWidth={1.5}
           />
-          <p className="text-sm text-gray-500">{t("noPaymentMethods")}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{t("noPaymentMethods")}</p>
         </div>
       </div>
     );
@@ -724,8 +724,8 @@ export function PaymentSection({
   return (
     <div>
       {/* Section Header */}
-      <h2 className="text-lg font-bold text-gray-900">{t("paymentMethod")}</h2>
-      <p className="text-sm text-gray-500 mt-0.5">{t("secureTransactions")}</p>
+      <h2 className="text-lg font-bold text-gray-900 dark:text-white">{t("paymentMethod")}</h2>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{t("secureTransactions")}</p>
 
       {/* Inline requirement errors from parent */}
       {errors && errors.length > 0 && (
@@ -756,11 +756,11 @@ export function PaymentSection({
               {hasMultipleMethods && (
                 <label
                   className={`flex items-center gap-3 px-4 py-3.5 cursor-pointer transition-colors ${
-                    isSelected ? "bg-blue-50" : "bg-white hover:bg-gray-50"
+                    isSelected ? "bg-blue-50 dark:bg-primary/10" : "bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800"
                   } ${index > 0 ? "border-t" : ""}`}
                 >
                   <RadioGroupItem value={pm.id} />
-                  <span className="text-sm font-medium text-gray-900">
+                  <span className="text-sm font-medium text-gray-900 dark:text-white">
                     {pm.name}
                   </span>
                 </label>
@@ -768,10 +768,10 @@ export function PaymentSection({
 
               {/* Single method header (no radio, like current behavior) */}
               {!hasMultipleMethods && (
-                <div className="flex items-center justify-between px-4 py-3.5 bg-blue-50">
+                <div className="flex items-center justify-between px-4 py-3.5 bg-blue-50 dark:bg-primary/10">
                   <div className="flex items-center gap-3">
                     <RadioGroupItem value={pm.id} />
-                    <span className="text-sm font-medium text-gray-900">
+                    <span className="text-sm font-medium text-gray-900 dark:text-white">
                       {pm.name}
                     </span>
                   </div>
@@ -780,7 +780,7 @@ export function PaymentSection({
 
               {/* Sub-form for the selected method */}
               {isSelected && (
-                <div className="border-t bg-gray-50">
+                <div className="border-t dark:border-gray-800 bg-gray-50 dark:bg-neutral-900">
                   {pm.session_required ? (
                     <>
                       {/* Stripe: saved cards selector */}
@@ -810,8 +810,8 @@ export function PaymentSection({
                                     className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors ${
                                       selectedCardId ===
                                       card.gateway_payment_profile_id
-                                        ? "bg-white"
-                                        : "bg-white hover:bg-gray-50"
+                                        ? "bg-white dark:bg-neutral-900"
+                                        : "bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800"
                                     } ${cardIndex > 0 ? "border-t" : ""}`}
                                   >
                                     <RadioGroupItem
@@ -825,13 +825,13 @@ export function PaymentSection({
                                       format="flatRounded"
                                       width={34}
                                     />
-                                    <span className="text-sm text-gray-900 flex-1">
+                                    <span className="text-sm text-gray-900 dark:text-white flex-1">
                                       {t("savedCardLabel", {
                                         brand: getCardLabel(card.brand),
                                         digits: card.last4,
                                       })}
                                     </span>
-                                    <span className="text-xs text-gray-500">
+                                    <span className="text-xs text-gray-500 dark:text-gray-400">
                                       {t("cardExpiry", {
                                         month: String(card.month).padStart(
                                           2,
@@ -852,8 +852,8 @@ export function PaymentSection({
                                 <label
                                   className={`flex items-center gap-3 px-4 py-3 cursor-pointer border-t transition-colors ${
                                     isAddingNew
-                                      ? "bg-white"
-                                      : "bg-white hover:bg-gray-50"
+                                      ? "bg-white dark:bg-neutral-900"
+                                      : "bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800"
                                   }`}
                                 >
                                   <RadioGroupItem value="__new__" />
@@ -861,7 +861,7 @@ export function PaymentSection({
                                     className="w-5 h-5 text-gray-400"
                                     strokeWidth={1.5}
                                   />
-                                  <span className="text-sm text-gray-900">
+                                  <span className="text-sm text-gray-900 dark:text-white">
                                     {t("addNewPaymentMethod")}
                                   </span>
                                 </label>
@@ -968,7 +968,7 @@ export function PaymentSection({
                     /* ── Direct/manual payment ── */
                     <div className="px-4 py-4">
                       {pm.description && (
-                        <p className="text-sm text-gray-600 mb-2">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                           {pm.description}
                         </p>
                       )}
@@ -993,7 +993,7 @@ export function PaymentSection({
               handleUseShippingChange(checked === true)
             }
           />
-          <span className="text-sm text-gray-900">{t("sameAsShipping")}</span>
+          <span className="text-sm text-gray-900 dark:text-white">{t("sameAsShipping")}</span>
         </label>
 
         {!useShippingForBilling && (

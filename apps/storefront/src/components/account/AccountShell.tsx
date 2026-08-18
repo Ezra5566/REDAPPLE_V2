@@ -54,15 +54,15 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar Navigation */}
         <aside className="lg:w-64 flex-shrink-0">
-          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
             {/* User Info */}
-            <div className="p-4 border-b border-gray-200">
-              <p className="font-medium text-gray-900">
+            <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+              <p className="font-medium text-gray-900 dark:text-white">
                 {user?.first_name
                   ? `${user.first_name} ${user.last_name || ""}`.trim()
                   : t("myAccount")}
               </p>
-              <p className="text-sm text-gray-500 truncate">{user?.email}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{user?.email}</p>
             </div>
 
             {/* Navigation */}
@@ -80,8 +80,8 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
                         href={href}
                         className={`flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
                           isActive
-                            ? "bg-gray-50 text-primary"
-                            : "text-gray-700 hover:bg-gray-50"
+                            ? "bg-gray-50 dark:bg-gray-800 text-primary"
+                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                         }`}
                       >
                         <item.icon className="w-5 h-5" />
@@ -94,7 +94,7 @@ export function AccountShell({ children }: { children: React.ReactNode }) {
             </nav>
 
             {/* Logout */}
-            <div className="p-2 border-t border-gray-200">
+            <div className="p-2 border-t border-gray-200 dark:border-gray-800">
               <Button variant="ghost" onClick={handleLogout}>
                 <LogOut className="w-5 h-5" />
                 {t("signOut")}

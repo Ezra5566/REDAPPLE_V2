@@ -7,6 +7,7 @@ import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
 import { CartButton } from "@/components/layout/CartButton";
 import { SearchToggle } from "@/components/layout/SearchToggle";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { isWholesaleEnabled } from "@/lib/spree";
 import { getStoreName } from "@/lib/store";
@@ -92,7 +93,7 @@ export async function Header({
           {wholesaleEnabled && (
             <Link
               href={`${basePath}/wholesale`}
-              className="px-2 py-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors whitespace-nowrap"
+              className="px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
             >
               {t("wholesale")}
             </Link>
@@ -100,8 +101,11 @@ export async function Header({
           <LazyRegionPreferences variant="header" />
         </div>
       }
-      rightEnd={
+      rightEnd={  
         <>
+          {/* Theme toggle */}
+          <ThemeToggle />
+
           {/* Account - desktop only */}
           <div className="hidden md:block">
             <Button variant="ghost" size="icon-lg" asChild>

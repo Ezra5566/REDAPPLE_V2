@@ -55,7 +55,7 @@ function CheckoutSummarySkeleton() {
         </div>
         <div className="h-4 bg-gray-200 rounded w-16" />
       </div>
-      <div className="border-t border-gray-200 pt-4 space-y-3">
+      <div className="border-t border-border pt-4 space-y-3">
         <div className="flex justify-between">
           <div className="h-4 bg-gray-200 rounded w-20" />
           <div className="h-4 bg-gray-200 rounded w-16" />
@@ -64,7 +64,7 @@ function CheckoutSummarySkeleton() {
           <div className="h-4 bg-gray-200 rounded w-16" />
           <div className="h-4 bg-gray-200 rounded w-12" />
         </div>
-        <div className="flex justify-between pt-3 border-t border-gray-200">
+        <div className="flex justify-between pt-3 border-t border-border">
           <div className="h-5 bg-gray-200 rounded w-14" />
           <div className="h-6 bg-gray-200 rounded w-24" />
         </div>

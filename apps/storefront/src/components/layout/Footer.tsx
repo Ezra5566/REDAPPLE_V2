@@ -29,7 +29,7 @@ export function FooterCategoryLinks({
     <li key={category.id}>
       <Link
         href={`${basePath}/c/${category.permalink}`}
-        className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
       >
         {category.name}
       </Link>
@@ -43,27 +43,27 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
   const wholesaleEnabled = isWholesaleEnabled();
 
   return (
-    <footer className="bg-primary text-gray-300">
+    <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <span className="text-xl font-bold text-white">{storeName}</span>
-            <p className="mt-4 text-sm text-neutral-400">
+            <span className="text-xl font-bold text-foreground">{storeName}</span>
+            <p className="mt-4 text-sm text-muted-foreground">
               {t("description") || storeDescription}
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="text-sm font-medium text-neutral-300">
+            <h3 className="text-sm font-medium text-foreground">
               {t("shop")}
             </h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <Link
                   href={`${basePath}/products`}
-                  className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("allProducts")}
                 </Link>
@@ -74,14 +74,14 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
 
           {/* Account */}
           <div>
-            <h3 className="text-sm font-medium text-neutral-300">
+            <h3 className="text-sm font-medium text-foreground">
               {t("account")}
             </h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <Link
                   href={`${basePath}/account`}
-                  className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("myAccount")}
                 </Link>
@@ -89,7 +89,7 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
               <li>
                 <Link
                   href={`${basePath}/account/orders`}
-                  className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("orderHistory")}
                 </Link>
@@ -97,7 +97,7 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
               <li>
                 <Link
                   href={`${basePath}/cart`}
-                  className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {t("cart")}
                 </Link>
@@ -106,7 +106,7 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
                 <li>
                   <Link
                     href={`${basePath}/wholesale`}
-                    className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {t("wholesale")}
                   </Link>
@@ -117,7 +117,7 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
 
           {/* Policies */}
           <div>
-            <h3 className="text-sm font-medium text-neutral-300">
+            <h3 className="text-sm font-medium text-foreground">
               {t("policies")}
             </h3>
             <ul className="mt-4 space-y-3">
@@ -125,7 +125,7 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
                 <li key={policy.slug}>
                   <Link
                     href={`${basePath}/policies/${policy.slug}`}
-                    className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {tp(policy.nameKey)}
                   </Link>
@@ -135,7 +135,7 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-neutral-800 text-xs text-neutral-400 text-center">
+        <div className="mt-8 pt-8 border-t border-border text-xs text-muted-foreground text-center">
           <p>{t("copyright", { year: currentYear, storeName })}</p>
         </div>
       </div>

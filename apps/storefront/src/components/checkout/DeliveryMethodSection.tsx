@@ -24,7 +24,7 @@ export function DeliveryMethodSection({
 
   return (
     <div>
-      <h2 className="text-lg font-bold text-gray-900 mb-3">
+      <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
         {t("shippingMethod")}
       </h2>
 
@@ -39,7 +39,7 @@ export function DeliveryMethodSection({
       )}
 
       {fulfillments.length === 0 ? (
-        <div className="rounded-sm bg-gray-100 px-4 py-3.5 text-sm text-gray-500">
+        <div className="rounded-sm bg-gray-100 dark:bg-neutral-800 px-4 py-3.5 text-sm text-gray-500 dark:text-gray-400">
           {t("enterShippingAddressForMethods")}
         </div>
       ) : (
@@ -80,17 +80,17 @@ export function DeliveryMethodSection({
                       key={rate.id}
                       className={`flex items-center justify-between px-4 py-3.5 cursor-pointer transition-colors ${
                         rate.selected
-                          ? "bg-blue-50"
-                          : "bg-white hover:bg-gray-50"
+                          ? "bg-blue-50 dark:bg-primary/10"
+                          : "bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800"
                       } ${rateIndex > 0 ? "border-t" : ""}`}
                     >
                       <div className="flex items-center gap-3">
                         <RadioGroupItem value={rate.id} />
-                        <span className="text-sm text-gray-900">
+                        <span className="text-sm text-gray-900 dark:text-white">
                           {rate.name}
                         </span>
                       </div>
-                      <span className="text-sm text-gray-900">
+                      <span className="text-sm text-gray-900 dark:text-white">
                         {rate.display_cost}
                       </span>
                     </label>

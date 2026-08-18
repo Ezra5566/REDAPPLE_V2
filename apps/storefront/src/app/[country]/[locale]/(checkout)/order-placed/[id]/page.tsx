@@ -103,7 +103,7 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
   if (error || !order) {
     return (
       <div className="text-center py-12">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">
+        <h1 className="text-2xl font-bold text-foreground mb-4">
           {t(error || "orderNotFound")}
         </h1>
         <Button asChild>
@@ -121,28 +121,28 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
       {/* Success Header */}
       <div className="text-center mb-10">
         <CircleCheckBig className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
+        <h1 className="text-2xl font-bold text-foreground mb-2">
           {customerName
             ? t("thanksForOrder", { name: customerName.split(" ")[0] })
             : t("thanksForOrderAnonymous")}
         </h1>
-        <p className="text-gray-500">
+        <p className="text-muted-foreground">
           {t("orderNumber", { number: order.number })}
         </p>
         <p className="text-sm text-gray-400 mt-2">{t("emailConfirmation")}</p>
       </div>
 
       {/* Order Items */}
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-lg font-medium text-gray-900">
+      <div className="bg-background rounded-xl border border-border overflow-hidden mb-6">
+        <div className="px-6 py-4 border-b border-border">
+          <h2 className="text-lg font-medium text-foreground">
             {t("orderItems")}
           </h2>
         </div>
         <ul className="divide-y divide-gray-200">
           {order.items?.map((item) => (
             <li key={item.id} className="px-6 py-4 flex gap-4">
-              <div className="relative w-14 h-14 bg-gray-100 rounded-xl flex-shrink-0 overflow-hidden">
+              <div className="relative w-14 h-14 bg-muted rounded-xl flex-shrink-0 overflow-hidden">
                 <ProductImage
                   src={item.thumbnail_url}
                   alt={item.name}
@@ -152,17 +152,17 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-medium text-gray-900">
+                <h3 className="text-sm font-medium text-foreground">
                   {item.name}
                 </h3>
                 {item.options_text && (
-                  <p className="text-sm text-gray-500">{item.options_text}</p>
+                  <p className="text-sm text-muted-foreground">{item.options_text}</p>
                 )}
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-muted-foreground">
                   {t("qty", { quantity: item.quantity })}
                 </p>
               </div>
-              <div className="text-sm font-medium text-gray-900">
+              <div className="text-sm font-medium text-foreground">
                 {item.display_total}
               </div>
             </li>
@@ -170,18 +170,18 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
         </ul>
 
         {/* Totals */}
-        <div className="px-6 py-4 border-t border-gray-200">
+        <div className="px-6 py-4 border-t border-border">
           <OrderTotals order={order} />
         </div>
       </div>
 
       {/* Shipping & Payment */}
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+      <div className="bg-background rounded-xl border border-border overflow-hidden mb-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
           {/* Shipping Method */}
           {order.fulfillments && order.fulfillments.length > 0 && (
             <div className="px-6 py-4">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3">
+              <h3 className="text-sm font-semibold text-foreground mb-3">
                 {t("shippingMethod")}
               </h3>
               {order.fulfillments.map((fulfillment) => (
@@ -191,11 +191,11 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
                 >
                   <Package className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium text-foreground">
                       {fulfillment.delivery_method?.name ||
                         t("standardShipping")}
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       {fulfillment.display_cost}
                     </p>
                   </div>
@@ -207,7 +207,7 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
           {/* Payment Information */}
           {order.payments && order.payments.length > 0 && (
             <div className="px-6 py-4">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3">
+              <h3 className="text-sm font-semibold text-foreground mb-3">
                 {t("payment")}
               </h3>
               {order.payments
@@ -228,11 +228,11 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
       </div>
 
       {/* Contact & Addresses */}
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+      <div className="bg-background rounded-xl border border-border overflow-hidden mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
           {order.shipping_address && (
             <div className="px-6 py-4">
-              <h3 className="text-sm font-semibold text-gray-900 mb-2">
+              <h3 className="text-sm font-semibold text-foreground mb-2">
                 {t("shippingAddress")}
               </h3>
               <AddressBlock address={order.shipping_address} />
@@ -241,7 +241,7 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
 
           {order.billing_address && (
             <div className="px-6 py-4">
-              <h3 className="text-sm font-semibold text-gray-900 mb-2">
+              <h3 className="text-sm font-semibold text-foreground mb-2">
                 {t("billingAddress")}
               </h3>
               <AddressBlock address={order.billing_address} />
@@ -250,8 +250,8 @@ export default function OrderPlacedPage({ params }: OrderPlacedPageProps) {
         </div>
 
         {order.email && (
-          <div className="px-6 py-3 border-t border-gray-200">
-            <p className="text-sm text-gray-500">
+          <div className="px-6 py-3 border-t border-border">
+            <p className="text-sm text-muted-foreground">
               {t("confirmationSentTo")}{" "}
               <span className="font-medium text-gray-700">{order.email}</span>
             </p>

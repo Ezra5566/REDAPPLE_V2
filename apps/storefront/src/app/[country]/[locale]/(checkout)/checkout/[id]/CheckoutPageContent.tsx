@@ -625,10 +625,10 @@ function CheckoutPageContentInner({
   if (error && !cart) {
     return (
       <div className="text-center py-12">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">
+        <h1 className="text-2xl font-bold text-foreground mb-4">
           {t("checkoutError")}
         </h1>
-        <p className="text-gray-600 mb-6">{error}</p>
+        <p className="text-muted-foreground mb-6">{error}</p>
         <Link
           href={`${basePath}/cart`}
           className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-xl hover:bg-primary-700"
@@ -645,10 +645,10 @@ function CheckoutPageContentInner({
   if (!cart.items || cart.items.length === 0) {
     return (
       <div className="text-center py-12">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">
+        <h1 className="text-2xl font-bold text-foreground mb-4">
           {t("emptyCart")}
         </h1>
-        <p className="text-gray-600 mb-6">{t("emptyCartDescription")}</p>
+        <p className="text-muted-foreground mb-6">{t("emptyCartDescription")}</p>
         <Link
           href={`${basePath}/products`}
           className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-xl hover:bg-primary-700"
@@ -673,7 +673,7 @@ function CheckoutPageContentInner({
       {!isAuthenticated && parseFloat(cart.total ?? "0") > 0 && (
         <div className={expressAvailable ? "mb-4" : ""}>
           {expressAvailable && (
-            <h2 className="text-lg font-bold text-gray-900 mb-3">
+            <h2 className="text-lg font-bold text-foreground mb-3">
               Express checkout
             </h2>
           )}

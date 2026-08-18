@@ -140,14 +140,14 @@ export function CartDrawer() {
               </Link>
             </div>
           ) : (
-            <ul className="divide-y divide-gray-200">
+            <ul className="divide-y divide-gray-200 dark:divide-gray-800">
               {lineItems.map((item) => (
                 <li key={item.id} className="p-4">
                   <div className="flex gap-4">
                     {/* Image */}
                     <Link
                       href={`${basePath}/products/${item.slug}`}
-                      className="relative w-24 h-24 bg-gray-100 rounded overflow-hidden flex-shrink-0"
+                      className="relative w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded overflow-hidden flex-shrink-0"
                       onClick={closeCart}
                     >
                       <ProductImage
@@ -164,7 +164,7 @@ export function CartDrawer() {
                       <div className="flex justify-between items-start">
                         <Link
                           href={`${basePath}/products/${item.slug}`}
-                          className="font-medium text-gray-900 hover:text-primary line-clamp-2"
+                          className="font-medium text-gray-900 dark:text-white hover:text-primary line-clamp-2"
                           onClick={closeCart}
                         >
                           {item.name}
@@ -187,7 +187,7 @@ export function CartDrawer() {
 
                       {/* Options */}
                       {item.options_text && (
-                        <p className="mt-1 text-sm text-gray-500">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                           {item.options_text}
                         </p>
                       )}
@@ -216,7 +216,7 @@ export function CartDrawer() {
                               </span>
                             </>
                           ) : (
-                            <span className="text-gray-900">
+                            <span className="text-gray-900 dark:text-white">
                               {item.display_price}
                             </span>
                           )}
@@ -232,7 +232,7 @@ export function CartDrawer() {
 
         {/* Footer */}
         {!isEmpty && !loading && (
-          <SheetFooter className="border-t border-gray-200 p-4 space-y-4">
+          <SheetFooter className="border-t border-gray-200 dark:border-gray-800 p-4 space-y-4">
             {!expressProcessing && (
               <>
                 {/* Summary */}
@@ -250,7 +250,7 @@ export function CartDrawer() {
                     )}
                   <div className="flex justify-between items-center">
                     <span>{tc("shipping")}</span>
-                    <span className="text-gray-500">
+                    <span className="text-gray-500 dark:text-gray-400">
                       {t("shippingCalculatedAtCheckout")}
                     </span>
                   </div>
@@ -293,7 +293,7 @@ export function CartDrawer() {
 
         {/* Loading overlay */}
         {updating && (
-          <div className="absolute inset-0 bg-white/50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-white/50 dark:bg-black/50 flex items-center justify-center">
             <div className="w-8 h-8 border-4 border-gray-600 border-t-transparent rounded-full animate-spin" />
           </div>
         )}

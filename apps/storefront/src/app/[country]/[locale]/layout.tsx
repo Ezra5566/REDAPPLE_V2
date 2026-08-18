@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { Suspense } from "react";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "../../globals.css";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { DocumentShell } from "@/components/layout/DocumentShell";
@@ -119,14 +120,16 @@ export async function CountryLocaleLayoutContent({
 
     return (
       <DocumentShell locale={requestedLocale}>
-        <CountryLocaleProviders
-          country={country}
-          locale={requestedLocale}
-          markets={availableMarkets}
-          messages={messages}
-        >
-          {children}
-        </CountryLocaleProviders>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <CountryLocaleProviders
+            country={country}
+            locale={requestedLocale}
+            markets={availableMarkets}
+            messages={messages}
+          >
+            {children}
+          </CountryLocaleProviders>
+        </ThemeProvider>
       </DocumentShell>
     );
   };

@@ -39,7 +39,7 @@ function CreditCardItem({
   };
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6">
+    <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
       <div className="flex justify-between items-start">
         <div className="flex items-center gap-4">
           <PaymentIcon
@@ -48,20 +48,20 @@ function CreditCardItem({
             width={48}
           />
           <div>
-            <p className="text-sm font-medium text-gray-900">
+            <p className="text-sm font-medium text-gray-900 dark:text-white">
               {t("cardEndingIn", {
                 label: getCardLabel(card.brand),
                 digits: card.last4,
               })}
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-500 dark:text-gray-400">
               {t("cardExpires", {
                 month: String(card.month).padStart(2, "0"),
                 year: String(card.year),
               })}
             </p>
             {card.name && (
-              <p className="text-sm text-gray-500 mt-1">{card.name}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{card.name}</p>
             )}
           </div>
         </div>

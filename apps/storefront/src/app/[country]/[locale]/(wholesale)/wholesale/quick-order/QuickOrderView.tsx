@@ -142,20 +142,20 @@ export function QuickOrderView() {
   return (
     <div className="container mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900">
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
           {t("quickOrder.title")}
         </h1>
-        <p className="mt-2 text-slate-500">{t("quickOrder.subtitle")}</p>
+        <p className="mt-2 text-slate-500 dark:text-slate-400">{t("quickOrder.subtitle")}</p>
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white">
-        <div className="grid grid-cols-[1fr_7rem_auto] gap-3 border-b border-slate-200 px-4 py-3 text-xs font-medium uppercase tracking-wide text-slate-500">
+      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-neutral-900">
+        <div className="grid grid-cols-[1fr_7rem_auto] gap-3 border-b border-slate-200 dark:border-slate-800 px-4 py-3 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
           <span>{t("quickOrder.skuHeader")}</span>
           <span>{t("quickOrder.qtyHeader")}</span>
           <span className="sr-only">{t("quickOrder.actionsHeader")}</span>
         </div>
 
-        <div className="divide-y divide-slate-100">
+        <div className="divide-y divide-slate-100 dark:divide-slate-800">
           {rows.map((row) => (
             <div key={row.id} className="px-4 py-3">
               <div className="grid grid-cols-[1fr_7rem_auto] items-start gap-3">
@@ -247,7 +247,7 @@ export function QuickOrderView() {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 px-4 py-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 dark:border-slate-800 px-4 py-3">
           <Button type="button" variant="outline" onClick={addRow}>
             <Plus className="h-4 w-4" />
             {t("quickOrder.addRow")}

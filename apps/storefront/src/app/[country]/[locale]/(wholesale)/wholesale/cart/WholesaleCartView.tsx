@@ -75,16 +75,16 @@ export function WholesaleCartView() {
 
   return (
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="mb-8 text-3xl font-bold text-slate-900">
+      <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">
         {tw("cart.title")}
       </h1>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <div className="divide-y rounded-xl border border-slate-200 bg-white">
+          <div className="divide-y rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-neutral-900">
             {cart.items.map((item) => (
               <div key={item.id} className="flex gap-6 p-6">
-                <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100">
+                <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
                   <ProductImage
                     src={item.thumbnail_url}
                     alt={item.name}
@@ -95,15 +95,15 @@ export function WholesaleCartView() {
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="truncate text-lg font-medium text-slate-900">
+                  <h3 className="truncate text-lg font-medium text-slate-900 dark:text-white">
                     {item.name}
                   </h3>
                   {item.options_text && (
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {item.options_text}
                     </p>
                   )}
-                  <p className="mt-2 text-lg font-semibold text-slate-900">
+                  <p className="mt-2 text-lg font-semibold text-slate-900 dark:text-white">
                     {item.display_price ?? "—"}
                   </p>
                   {item.quantity < WHOLESALE_MIN_QUANTITY ? (
@@ -143,15 +143,15 @@ export function WholesaleCartView() {
         </div>
 
         <div className="lg:col-span-1">
-          <div className="sticky top-24 rounded-xl border border-slate-200 bg-white p-6">
-            <h2 className="text-lg font-medium text-slate-900">
+          <div className="sticky top-24 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-neutral-900 p-6">
+            <h2 className="text-lg font-medium text-slate-900 dark:text-white">
               {tc("orderSummary")}
             </h2>
 
             <dl className="mt-6 space-y-4">
               <div className="flex justify-between">
-                <dt className="text-slate-500">{tc("subtotal")}</dt>
-                <dd className="text-slate-900">
+                <dt className="text-slate-500 dark:text-slate-400">{tc("subtotal")}</dt>
+                <dd className="text-slate-900 dark:text-white">
                   {cart.display_item_total ?? "—"}
                 </dd>
               </div>
@@ -163,15 +163,15 @@ export function WholesaleCartView() {
               )}
               {cart.tax_total && parseFloat(cart.tax_total) > 0 && (
                 <div className="flex justify-between">
-                  <dt className="text-slate-500">{tc("tax")}</dt>
-                  <dd className="text-slate-900">{cart.display_tax_total}</dd>
+                  <dt className="text-slate-500 dark:text-slate-400">{tc("tax")}</dt>
+                  <dd className="text-slate-900 dark:text-white">{cart.display_tax_total}</dd>
                 </div>
               )}
-              <div className="flex justify-between border-t pt-4">
-                <dt className="text-lg font-medium text-slate-900">
+              <div className="flex justify-between border-t dark:border-slate-800 pt-4">
+                <dt className="text-lg font-medium text-slate-900 dark:text-white">
                   {tc("total")}
                 </dt>
-                <dd className="text-lg font-bold text-slate-900">
+                <dd className="text-lg font-bold text-slate-900 dark:text-white">
                   {cart.display_total ?? "—"}
                 </dd>
               </div>

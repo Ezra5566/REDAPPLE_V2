@@ -187,7 +187,7 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
       {/* Suggestions dropdown */}
       {showSuggestions && (
         <div
-          className="fixed left-0 right-0 mt-1 bg-white border-b border-gray-200 z-50"
+          className="fixed left-0 right-0 mt-1 bg-white dark:bg-neutral-950 border-b border-gray-200 dark:border-gray-800 z-50"
           onMouseDown={handleSuggestionsMouseDown}
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">

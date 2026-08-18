@@ -107,19 +107,19 @@ export function AddressSelector({
               key={address.id}
               className={`flex items-start gap-3 px-4 py-3.5 cursor-pointer transition-colors ${
                 selectedAddressId === address.id
-                  ? "bg-blue-50"
-                  : "bg-white hover:bg-gray-50"
+                  ? "bg-blue-50 dark:bg-primary/10"
+                  : "bg-white dark:bg-neutral-900 hover:bg-gray-50 dark:hover:bg-neutral-800"
               } ${index > 0 ? "border-t" : ""}`}
             >
               <RadioGroupItem value={address.id} className="mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
-                <span className="text-sm text-gray-900">
+                <span className="text-sm text-gray-900 dark:text-white">
                   {address.full_name}
                   {address.company && (
                     <span className="text-gray-500">, {address.company}</span>
                   )}
                 </span>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   {address.address1}
                   {address.address2 && `, ${address.address2}`}, {address.city},{" "}
                   {address.state_text || address.state_name}{" "}
@@ -133,7 +133,7 @@ export function AddressSelector({
                     e.preventDefault();
                     onEditAddress(address);
                   }}
-                  className="text-xs text-gray-500 underline underline-offset-2 hover:text-gray-900 flex-shrink-0"
+                  className="text-xs text-gray-500 dark:text-gray-400 underline underline-offset-2 hover:text-gray-900 dark:hover:text-white flex-shrink-0"
                 >
                   {tc("edit")}
                 </button>
@@ -151,7 +151,7 @@ export function AddressSelector({
           >
             <RadioGroupItem value="new" />
             <MapPin className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
-            <span className="text-sm text-gray-900">
+            <span className="text-sm text-gray-900 dark:text-white">
               {t("useDifferentAddress")}
             </span>
           </label>
