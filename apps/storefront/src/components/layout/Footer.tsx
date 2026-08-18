@@ -8,6 +8,7 @@ import { getStoreDescription, getStoreName } from "@/lib/store";
 
 const storeName = getStoreName();
 const storeDescription = getStoreDescription();
+const currentYear = new Date().getFullYear();
 
 interface FooterProps {
   basePath: string;
@@ -135,7 +136,7 @@ export async function Footer({ basePath, locale, categoryLinks }: FooterProps) {
         </div>
 
         <div className="mt-8 pt-8 border-t border-neutral-800 text-xs text-neutral-400 text-center">
-          <p>{t("copyright", { year: new Date().getFullYear(), storeName })}</p>
+          <p>{t("copyright", { year: currentYear, storeName })}</p>
         </div>
       </div>
     </footer>
