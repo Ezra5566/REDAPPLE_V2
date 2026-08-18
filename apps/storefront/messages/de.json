@@ -53,10 +53,7 @@
     "updatePreferencesFailed": "Die regionalen Einstellungen konnten nicht aktualisiert werden. Bitte versuchen Sie es erneut."
   },
   "footer": {
-    "description": "Open-Source-E-Commerce basierend auf Spree REST API, TypeScript SDK und Next.js. Selbst hosten. Eigene Daten. Keine Plattformgebühren.",
-    "forkOnGithub": "Diese Storefront auf GitHub forken",
-    "quickstartGuide": "Schnellstartanleitung",
-    "learnMore": "Mehr über Spree Commerce erfahren",
+    "description": "REDAPPLEKE — echte Apple-Produkte für Afrika. iPhones, iPads, Macs, AirPods und Zubehör, geliefert in Kenia.",
     "shop": "Shop",
     "allProducts": "Alle Produkte",
     "categories": "Kategorien",
@@ -65,8 +62,7 @@
     "orderHistory": "Bestellverlauf",
     "cart": "Warenkorb",
     "policies": "Richtlinien",
-    "poweredBy": "Betrieben von",
-    "copyright": "© {year} {storeName}. Unterstützt durch Spree Commerce.",
+    "copyright": "© {year} {storeName}. Alle Rechte vorbehalten.",
     "wholesale": "Handel & Großhandel"
   },
   "home": {

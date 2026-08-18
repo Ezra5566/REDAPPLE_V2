@@ -54,9 +54,6 @@
   },
   "footer": {
     "description": "REDAPPLEKE — genuine Apple products for Africa. iPhones, iPads, Macs, AirPods and accessories, delivered across Kenya.",
-    "forkOnGithub": "Fork this storefront on GitHub",
-    "quickstartGuide": "Quickstart guide",
-    "learnMore": "Learn more about Spree Commerce",
     "shop": "Shop",
     "allProducts": "All Products",
     "categories": "Categories",
@@ -65,8 +62,7 @@
     "orderHistory": "Order History",
     "cart": "Cart",
     "policies": "Policies",
-    "poweredBy": "Powered by",
-    "copyright": "© {year} {storeName}. Powered by Spree Commerce.",
+    "copyright": "© {year} {storeName}. All rights reserved.",
     "wholesale": "Trade & Wholesale"
   },
   "home": {

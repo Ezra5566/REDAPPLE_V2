@@ -119,7 +119,18 @@ Run these once the web service reports healthy (`GET /up` → 200).
                         mail_from_address: 'no-reply@example.com', default_currency: 'USD', default: true)
    ```
 2. **Change the seeded admin password.** The seed creates `spree@example.com` /
-   `spree123` — change it in the Admin UI immediately.
+   `spree123` (class `Spree::AdminUser`). **There is no password field in the admin
+   UI** — the Profile page and Admin Users edit only cover email/name/roles. Change it
+   via Render Shell:
+   ```bash
+   bundle exec rails runner '
+   user = Spree::AdminUser.find_by(email: "spree@example.com")
+   user.update!(password: "REPLACE-WITH-STRONG-PASSWORD", password_confirmation: "REPLACE-WITH-STRONG-PASSWORD")
+   puts "Password changed for #{user.email}"
+   '
+   ```
+   Setting `ADMIN_EMAIL` / `ADMIN_PASSWORD` env vars does **not** help after first
+   boot — the seed only creates the user when none exists.
 3. **Create a publishable API key for the storefront.** In `/admin → Settings →
    Developers → API Keys → New Key` with type **Publishable** (or via CLI:
    `pnpm spree auth login --profile render --base-url https://<your-render-host>`, then
