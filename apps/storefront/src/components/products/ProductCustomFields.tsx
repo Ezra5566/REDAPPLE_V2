@@ -52,7 +52,7 @@ export function ProductCustomFields({
       <dl className="space-y-3">
         {customFields.map((field) => (
           <div key={field.id} className="flex">
-            <dt className="w-32 shrink-0 text-gray-500 dark:text-gray-400 text-sm">
+            <dt className="w-32 shrink-0 text-gray-500 dark:text-neutral-400 text-sm">
               {field.label}
             </dt>
             <dd className="text-gray-900 dark:text-white text-sm min-w-0">

@@ -43,7 +43,7 @@ export async function CategoryBanner({
 
           {/* Description */}
           {category.description && (
-            <p className="mb-4 text-gray-600 dark:text-gray-300">{category.description}</p>
+            <p className="mb-4 text-gray-600 dark:text-neutral-300">{category.description}</p>
           )}
         </div>
       </div>
@@ -56,7 +56,7 @@ export async function CategoryBanner({
               <Link
                 key={child.id}
                 href={`${basePath}/c/${child.permalink}`}
-                className="px-1.5 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-gray-700 dark:text-gray-300 transition-colors"
+                className="px-1.5 py-1 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg text-gray-700 dark:text-neutral-300 transition-colors"
               >
                 {child.name}
               </Link>

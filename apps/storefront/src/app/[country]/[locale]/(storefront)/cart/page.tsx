@@ -77,7 +77,7 @@ export default function CartPage() {
           <h1 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">
             {t("emptyCart")}
           </h1>
-          <p className="mt-2 text-gray-500 dark:text-gray-400">{t("emptyCartDescription")}</p>
+          <p className="mt-2 text-gray-500 dark:text-neutral-400">{t("emptyCartDescription")}</p>
           <div className="mt-6">
             <Button size="lg" asChild>
               <Link href={`${basePath}/products`}>
@@ -98,11 +98,11 @@ export default function CartPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Cart Items */}
         <div className="lg:col-span-2">
-          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 divide-y dark:divide-gray-800">
+          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 divide-y dark:divide-neutral-800">
             {cart.items.map((item) => (
               <div key={item.id} className="p-6 flex gap-6 dark:text-white">
                 {/* Image */}
-                <div className="relative w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden flex-shrink-0">
+                <div className="relative w-24 h-24 bg-gray-100 dark:bg-neutral-800 rounded-xl overflow-hidden flex-shrink-0">
                   <ProductImage
                     src={item.thumbnail_url}
                     alt={item.name}
@@ -118,7 +118,7 @@ export default function CartPage() {
                     {item.name}
                   </h3>
                   {item.options_text && (
-                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                    <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                       {item.options_text}
                     </p>
                   )}
@@ -153,14 +153,14 @@ export default function CartPage() {
 
         {/* Order Summary */}
         <div className="lg:col-span-1">
-          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 sticky top-24">
+          <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 p-6 sticky top-24">
             <h2 className="text-lg font-medium text-gray-900 dark:text-white">
               {tc("orderSummary")}
             </h2>
 
             <dl className="mt-6 space-y-4">
               <div className="flex justify-between">
-                <dt className="text-gray-500 dark:text-gray-400">{tc("subtotal")}</dt>
+                <dt className="text-gray-500 dark:text-neutral-400">{tc("subtotal")}</dt>
                 <dd className="text-gray-900 dark:text-white">{cart.display_item_total}</dd>
               </div>
               {cart.discount_total && parseFloat(cart.discount_total) < 0 && (
@@ -171,7 +171,7 @@ export default function CartPage() {
               )}
               {cart.delivery_total && parseFloat(cart.delivery_total) > 0 && (
                 <div className="flex justify-between">
-                  <dt className="text-gray-500 dark:text-gray-400">{tc("shipping")}</dt>
+                  <dt className="text-gray-500 dark:text-neutral-400">{tc("shipping")}</dt>
                   <dd className="text-gray-900 dark:text-white">
                     {cart.display_delivery_total}
                   </dd>
@@ -179,11 +179,11 @@ export default function CartPage() {
               )}
               {cart.tax_total && parseFloat(cart.tax_total) > 0 && (
                 <div className="flex justify-between">
-                  <dt className="text-gray-500 dark:text-gray-400">{tc("tax")}</dt>
+                  <dt className="text-gray-500 dark:text-neutral-400">{tc("tax")}</dt>
                   <dd className="text-gray-900 dark:text-white">{cart.display_tax_total}</dd>
                 </div>
               )}
-              <div className="border-t dark:border-gray-800 pt-4 flex justify-between">
+              <div className="border-t dark:border-neutral-800 pt-4 flex justify-between">
                 <dt className="text-lg font-medium text-gray-900 dark:text-white">
                   {tc("total")}
                 </dt>

@@ -123,7 +123,7 @@ export function AddressEditModal({
             />
           </div>
 
-          <div className="border-t border-gray-200 dark:border-gray-800 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse gap-3">
+          <div className="border-t border-gray-200 dark:border-neutral-800 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse gap-3">
             <Button type="submit" disabled={saving}>
               {saving ? tc("saving") : t("saveAddress")}
             </Button>

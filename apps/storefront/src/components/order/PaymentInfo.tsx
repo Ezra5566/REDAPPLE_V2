@@ -29,7 +29,7 @@ export function PaymentInfo({ payment, storeCreditLabel }: PaymentInfoProps) {
               digits: card.last4,
             })}
           </p>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
+          <p className="text-xs text-gray-500 dark:text-neutral-400">
             {t("cardExpires", {
               month: String(card.month).padStart(2, "0"),
               year: card.year,
@@ -61,7 +61,7 @@ export function PaymentInfo({ payment, storeCreditLabel }: PaymentInfoProps) {
       <p className="text-sm font-medium text-gray-900 dark:text-white">
         {payment.payment_method?.name}
       </p>
-      <p className="text-xs text-gray-500 dark:text-gray-400">{payment.display_amount}</p>
+      <p className="text-xs text-gray-500 dark:text-neutral-400">{payment.display_amount}</p>
     </div>
   );
 }

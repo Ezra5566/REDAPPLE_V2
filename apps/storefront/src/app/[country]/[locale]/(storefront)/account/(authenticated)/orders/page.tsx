@@ -29,12 +29,12 @@ export default async function OrdersPage({ params }: OrdersPageProps) {
       </h1>
 
       {orders.length === 0 ? (
-        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 p-12 text-center">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 p-12 text-center">
           <ShoppingBag className="w-12 h-12 text-gray-400 mx-auto mb-4" />
           <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
             {t("noOrders")}
           </h3>
-          <p className="text-gray-500 dark:text-gray-400 mb-6">{t("noOrdersDescription")}</p>
+          <p className="text-gray-500 dark:text-neutral-400 mb-6">{t("noOrdersDescription")}</p>
           <Button asChild>
             <Link href={`${basePath}/products`}>{t("startShopping")}</Link>
           </Button>

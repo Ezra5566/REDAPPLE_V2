@@ -267,7 +267,7 @@ export function AddressSection({
           {!isAuthenticated && (
             <Link
               href={signInUrl}
-              className="text-[13px] text-gray-700 dark:text-gray-300 underline underline-offset-2 hover:text-black dark:hover:text-white"
+              className="text-[13px] text-gray-700 dark:text-neutral-300 underline underline-offset-2 hover:text-black dark:hover:text-white"
             >
               {t("signIn")}
             </Link>
@@ -284,7 +284,7 @@ export function AddressSection({
           placeholder={t("emailAddress")}
         />
         {hasAccountEmail && (
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5">
+          <p className="text-xs text-gray-500 dark:text-neutral-400 mt-1.5">
             {t("usingAccountEmail")}
           </p>
         )}

@@ -21,7 +21,7 @@ export function Summary({ cart }: SummaryProps) {
         {items.map((item) => (
           <div key={item.id} className="flex items-center gap-4">
             <div className="relative w-[64px] h-[64px] flex-shrink-0">
-              <div className="relative w-full h-full rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+              <div className="relative w-full h-full rounded-lg overflow-hidden border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-800">
                 <ProductImage
                   src={item.thumbnail_url}
                   alt={item.name}
@@ -40,7 +40,7 @@ export function Summary({ cart }: SummaryProps) {
                 {item.name}
               </p>
               {item.options_text && (
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                <p className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">
                   {item.options_text}
                 </p>
               )}
@@ -51,18 +51,18 @@ export function Summary({ cart }: SummaryProps) {
       </div>
 
       {/* Totals — Shopify style */}
-      <div className="border-t border-gray-200 dark:border-gray-800 pt-4 space-y-2">
+      <div className="border-t border-gray-200 dark:border-neutral-800 pt-4 space-y-2">
         <div className="flex justify-between text-sm">
-          <span className="text-gray-700 dark:text-gray-300">{tc("subtotal")}</span>
+          <span className="text-gray-700 dark:text-neutral-300">{tc("subtotal")}</span>
           <span className="text-gray-900 dark:text-white">{cart.display_item_total}</span>
         </div>
 
         <div className="flex justify-between text-sm">
-          <span className="text-gray-700 dark:text-gray-300">{tc("shipping")}</span>
+          <span className="text-gray-700 dark:text-neutral-300">{tc("shipping")}</span>
           {hasShipping ? (
             <span className="text-gray-900 dark:text-white">{cart.display_delivery_total}</span>
           ) : (
-            <span className="text-xs text-gray-500 dark:text-gray-400">
+            <span className="text-xs text-gray-500 dark:text-neutral-400">
               {t("enterShippingAddress")}
             </span>
           )}
@@ -70,7 +70,7 @@ export function Summary({ cart }: SummaryProps) {
 
         {cart.discount_total && parseFloat(cart.discount_total) !== 0 && (
           <div className="flex justify-between text-sm">
-            <span className="text-gray-700 dark:text-gray-300">{tc("discount")}</span>
+            <span className="text-gray-700 dark:text-neutral-300">{tc("discount")}</span>
             <span className="text-green-700">
               {cart.display_discount_total}
             </span>
@@ -79,13 +79,13 @@ export function Summary({ cart }: SummaryProps) {
 
         {parseFloat(cart.tax_total ?? "0") > 0 && (
           <div className="flex justify-between text-sm">
-            <span className="text-gray-700 dark:text-gray-300">{tc("tax")}</span>
+            <span className="text-gray-700 dark:text-neutral-300">{tc("tax")}</span>
             <span className="text-gray-900 dark:text-white">{cart.display_tax_total}</span>
           </div>
         )}
 
         {/* Total row */}
-        <div className="flex justify-between items-baseline pt-3 border-t border-gray-200 dark:border-gray-800">
+        <div className="flex justify-between items-baseline pt-3 border-t border-gray-200 dark:border-neutral-800">
           <span className="text-base font-bold text-gray-900 dark:text-white">
             {tc("total")}
           </span>
@@ -103,7 +103,7 @@ export function Summary({ cart }: SummaryProps) {
             Gift cards use store credits under the hood, so only show one. */}
         {cart.gift_card && parseFloat(cart.gift_card_total ?? "0") > 0 ? (
           <div className="flex justify-between text-sm">
-            <span className="text-gray-700 dark:text-gray-300">{tc("giftCard")}</span>
+            <span className="text-gray-700 dark:text-neutral-300">{tc("giftCard")}</span>
             <span className="text-green-700">
               -{cart.display_gift_card_total}
             </span>
@@ -111,7 +111,7 @@ export function Summary({ cart }: SummaryProps) {
         ) : cart.store_credit_total &&
           parseFloat(cart.store_credit_total) > 0 ? (
           <div className="flex justify-between text-sm">
-            <span className="text-gray-700 dark:text-gray-300">{tc("storeCredit")}</span>
+            <span className="text-gray-700 dark:text-neutral-300">{tc("storeCredit")}</span>
             <span className="text-green-700">
               -{cart.display_store_credit_total}
             </span>

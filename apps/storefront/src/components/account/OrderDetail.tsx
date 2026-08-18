@@ -39,7 +39,7 @@ export async function OrderDetail({
       <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
         {t("orderTitle", { number: order.number })}
       </h1>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-6">
+      <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1 mb-6">
         {t("placedOn", { date: formatDateTime(order.completed_at, locale) })}
       </p>
 
@@ -66,7 +66,7 @@ export async function OrderDetail({
           );
         })
       ) : (
-        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden mb-4">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 overflow-hidden mb-4">
           <div className="divide-y divide-gray-200">
             {order.items?.map((item) => (
               <div key={item.id} className="px-6 py-4">
@@ -78,7 +78,7 @@ export async function OrderDetail({
       )}
 
       {order.customer_note && (
-        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 mb-4">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 p-6 mb-4">
           <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
             {t("specialInstructions")}
           </h3>
@@ -87,7 +87,7 @@ export async function OrderDetail({
       )}
 
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200 dark:divide-gray-800">
+        <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200 dark:divide-neutral-800">
           {order.billing_address && (
             <div className="px-6 py-4">
               <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">

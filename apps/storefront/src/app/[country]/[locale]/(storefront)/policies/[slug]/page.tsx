@@ -101,7 +101,7 @@ export default async function PolicyPage({
           {policy.body}
         </div>
       ) : (
-        <p className="text-gray-500 dark:text-gray-400">{t("noContent")}</p>
+        <p className="text-gray-500 dark:text-neutral-400">{t("noContent")}</p>
       )}
     </div>
   );

@@ -190,7 +190,7 @@ function MobileOptionSection({
                 aria-pressed={isSelected}
                 onClick={() => onToggle(option.id)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors ${
-                  isSelected ? "bg-gray-50" : "hover:bg-gray-50"
+                  isSelected ? "bg-gray-50 dark:bg-neutral-900" : "hover:bg-gray-50 dark:bg-neutral-900"
                 }`}
               >
                 <span
@@ -291,7 +291,7 @@ function MobilePriceSection({
               className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm rounded-xl transition-colors ${
                 isSelected
                   ? "bg-gray-50 font-medium text-gray-900"
-                  : "text-gray-700 hover:bg-gray-50"
+                  : "text-gray-700 hover:bg-gray-50 dark:bg-neutral-900"
               }`}
             >
               <span className="flex-1 text-left">{bucket.label}</span>
@@ -340,7 +340,7 @@ function MobileAvailabilitySection({
               className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm rounded-xl transition-colors ${
                 isSelected
                   ? "bg-gray-50 font-medium text-gray-900"
-                  : "text-gray-700 hover:bg-gray-50"
+                  : "text-gray-700 hover:bg-gray-50 dark:bg-neutral-900"
               }`}
             >
               <span className="flex-1 text-left">

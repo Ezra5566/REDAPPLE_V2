@@ -140,7 +140,7 @@ export function VariantPicker({
                 {optionType.label}
               </span>
               {selectedValue && (
-                <span className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-neutral-400">
                   {getOptionValueDetails(optionType.id, selectedValue)?.label ||
                     selectedValue}
                 </span>

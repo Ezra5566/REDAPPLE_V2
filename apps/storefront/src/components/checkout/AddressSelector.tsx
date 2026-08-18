@@ -119,7 +119,7 @@ export function AddressSelector({
                     <span className="text-gray-500">, {address.company}</span>
                   )}
                 </span>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-gray-500 dark:text-neutral-400">
                   {address.address1}
                   {address.address2 && `, ${address.address2}`}, {address.city},{" "}
                   {address.state_text || address.state_name}{" "}
@@ -133,7 +133,7 @@ export function AddressSelector({
                     e.preventDefault();
                     onEditAddress(address);
                   }}
-                  className="text-xs text-gray-500 dark:text-gray-400 underline underline-offset-2 hover:text-gray-900 dark:hover:text-white flex-shrink-0"
+                  className="text-xs text-gray-500 dark:text-neutral-400 underline underline-offset-2 hover:text-gray-900 dark:hover:text-white flex-shrink-0"
                 >
                   {tc("edit")}
                 </button>
@@ -146,7 +146,7 @@ export function AddressSelector({
             className={`flex items-center gap-3 px-4 py-3.5 cursor-pointer border-t transition-colors ${
               selectedAddressId === "new"
                 ? "bg-blue-50"
-                : "bg-white hover:bg-gray-50"
+                : "bg-white hover:bg-gray-50 dark:bg-neutral-900"
             }`}
           >
             <RadioGroupItem value="new" />

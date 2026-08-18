@@ -17,7 +17,7 @@ export async function HeroSection({ basePath, locale }: HeroSectionProps) {
   const storeName = getStoreName();
 
   return (
-    <section className="relative border-b border-gray-200 dark:border-gray-800 min-h-[823px] md:min-h-[560px] flex items-center overflow-hidden">
+    <section className="relative border-b border-gray-200 dark:border-neutral-800 min-h-[823px] md:min-h-[560px] flex items-center overflow-hidden">
       <Image
         src="/REDAPPLEKE/redapplegeroimg.png"
         alt={storeName}
@@ -34,7 +34,7 @@ export async function HeroSection({ basePath, locale }: HeroSectionProps) {
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
             {t("welcome", { storeName })}
           </h1>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 dark:text-neutral-300 max-w-2xl mx-auto">
             {t("heroDescription")}
           </p>
           <div className="mt-8 flex justify-center gap-4 flex-wrap">

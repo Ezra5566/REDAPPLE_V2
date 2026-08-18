@@ -671,7 +671,7 @@ export function PaymentSection({
             className="w-8 h-8 text-gray-300 mx-auto mb-2"
             strokeWidth={1.5}
           />
-          <p className="text-sm text-gray-600 dark:text-gray-400">{t("noPaymentRequired")}</p>
+          <p className="text-sm text-gray-600 dark:text-neutral-400">{t("noPaymentRequired")}</p>
         </div>
 
         {/* Billing address */}
@@ -709,12 +709,12 @@ export function PaymentSection({
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           {t("paymentMethod")}
         </h2>
-        <div className="mt-2 rounded-sm border bg-gray-50 px-4 py-8 text-center">
+        <div className="mt-2 rounded-sm border bg-gray-50 dark:bg-neutral-900 px-4 py-8 text-center">
           <CreditCard
-            className="w-10 h-10 text-gray-300 mx-auto mb-3"
+            className="w-10 h-10 text-gray-300 dark:text-neutral-600 mx-auto mb-3"
             strokeWidth={1.5}
           />
-          <p className="text-sm text-gray-500 dark:text-gray-400">{t("noPaymentMethods")}</p>
+          <p className="text-sm text-gray-500 dark:text-neutral-400">{t("noPaymentMethods")}</p>
         </div>
       </div>
     );
@@ -725,7 +725,7 @@ export function PaymentSection({
     <div>
       {/* Section Header */}
       <h2 className="text-lg font-bold text-gray-900 dark:text-white">{t("paymentMethod")}</h2>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{t("secureTransactions")}</p>
+      <p className="text-sm text-gray-500 dark:text-neutral-400 mt-0.5">{t("secureTransactions")}</p>
 
       {/* Inline requirement errors from parent */}
       {errors && errors.length > 0 && (
@@ -780,7 +780,7 @@ export function PaymentSection({
 
               {/* Sub-form for the selected method */}
               {isSelected && (
-                <div className="border-t dark:border-gray-800 bg-gray-50 dark:bg-neutral-900">
+                <div className="border-t dark:border-neutral-800 bg-gray-50 dark:bg-neutral-900">
                   {pm.session_required ? (
                     <>
                       {/* Stripe: saved cards selector */}
@@ -831,7 +831,7 @@ export function PaymentSection({
                                         digits: card.last4,
                                       })}
                                     </span>
-                                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                                    <span className="text-xs text-gray-500 dark:text-neutral-400">
                                       {t("cardExpiry", {
                                         month: String(card.month).padStart(
                                           2,
@@ -841,7 +841,7 @@ export function PaymentSection({
                                       })}
                                     </span>
                                     {card.default && (
-                                      <span className="text-[11px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">
+                                      <span className="text-[11px] font-medium text-gray-500 dark:text-neutral-400 bg-gray-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">
                                         {t("default")}
                                       </span>
                                     )}
@@ -968,7 +968,7 @@ export function PaymentSection({
                     /* ── Direct/manual payment ── */
                     <div className="px-4 py-4">
                       {pm.description && (
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        <p className="text-sm text-gray-600 dark:text-neutral-400 mb-2">
                           {pm.description}
                         </p>
                       )}

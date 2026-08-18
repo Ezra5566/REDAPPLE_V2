@@ -23,7 +23,7 @@ export function ProductImage({
 
   if (!src || hasError) {
     return (
-      <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-300">
+      <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-neutral-800 text-gray-300 dark:text-neutral-600">
         <Icon className={iconClassName} />
       </div>
     );

@@ -187,7 +187,7 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
       {/* Suggestions dropdown */}
       {showSuggestions && (
         <div
-          className="fixed left-0 right-0 mt-1 bg-white dark:bg-neutral-950 border-b border-gray-200 dark:border-gray-800 z-50"
+          className="fixed left-0 right-0 mt-1 bg-white dark:bg-neutral-950 border-b border-gray-200 dark:border-neutral-800 z-50"
           onMouseDown={handleSuggestionsMouseDown}
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -210,11 +210,11 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
                       onClick={() => handleSuggestionClick(product, index)}
                       tabIndex={-1}
                       className={`w-full flex items-center gap-3 p-3 text-left hover:bg-gray-50 transition-colors ${
-                        index === selectedIndex ? "bg-gray-50" : ""
+                        index === selectedIndex ? "bg-gray-50 dark:bg-neutral-900" : ""
                       }`}
                     >
                       {/* Thumbnail */}
-                      <div className="relative w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded flex-shrink-0 overflow-hidden">
+                      <div className="relative w-10 h-10 bg-gray-100 dark:bg-neutral-800 rounded flex-shrink-0 overflow-hidden">
                         <ProductImage
                           src={product.thumbnail_url}
                           alt={product.name}
@@ -229,7 +229,7 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
                           {product.name}
                         </p>
                         {product.price?.display_amount && (
-                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                          <p className="text-sm text-gray-500 dark:text-neutral-400">
                             {product.price.display_amount}
                           </p>
                         )}
@@ -249,7 +249,7 @@ export function SearchBar({ basePath, autoFocus, onNavigate }: SearchBarProps) {
                         setIsOpen(false);
                         onNavigate?.();
                       }}
-                      className="w-full p-3 text-sm text-primary hover:bg-gray-50 dark:hover:bg-gray-800 text-center font-medium"
+                      className="w-full p-3 text-sm text-primary hover:bg-gray-50 dark:hover:bg-neutral-800 text-center font-medium"
                     >
                       {t("viewAllResultsFor", { query: query.trim() })}
                     </button>

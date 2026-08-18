@@ -54,10 +54,10 @@ export async function Breadcrumbs({
           return (
             <li key={index} className="flex items-center">
               {index > 0 && (
-                <ChevronRight className="w-4 h-4 text-gray-400 mx-2" />
+                <ChevronRight className="w-4 h-4 text-gray-400 dark:text-neutral-500 mx-2" />
               )}
               {isLast ? (
-                <span className="text-gray-500" aria-current="page">
+                <span className="text-gray-500 dark:text-neutral-400" aria-current="page">
                   {item.name}
                 </span>
               ) : (

@@ -72,7 +72,7 @@ function ProfileForm({
     <div>
       <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t("profile")}</h1>
 
-      <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+      <div className="bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 overflow-hidden">
         <form onSubmit={handleSubmit}>
           <div className="p-6 space-y-6">
             {error && (
@@ -175,7 +175,7 @@ function ProfileForm({
             )}
           </div>
 
-          <div className="px-6 py-4 bg-gray-50 dark:bg-neutral-950 border-t border-gray-200 dark:border-gray-800 flex justify-end">
+          <div className="px-6 py-4 bg-gray-50 dark:bg-neutral-950 border-t border-gray-200 dark:border-neutral-800 flex justify-end">
             <Button type="submit" disabled={saving}>
               {saving ? t("saving") : t("saveChanges")}
             </Button>
@@ -185,7 +185,7 @@ function ProfileForm({
 
       {/* Account Info */}
       <div className="mt-8 bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-800">
+        <div className="px-6 py-4 border-b border-gray-200 dark:border-neutral-800">
           <h2 className="text-lg font-medium text-gray-900 dark:text-white">
             {t("accountInformation")}
           </h2>
@@ -193,13 +193,13 @@ function ProfileForm({
         <div className="p-6">
           <dl className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+              <dt className="text-sm font-medium text-gray-500 dark:text-neutral-400">
                 {t("accountId")}
               </dt>
               <dd className="mt-1 text-sm text-gray-900 dark:text-white">{user.id}</dd>
             </div>
             <div>
-              <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
+              <dt className="text-sm font-medium text-gray-500 dark:text-neutral-400">
                 {t("email")}
               </dt>
               <dd className="mt-1 text-sm text-gray-900 dark:text-white">{user.email}</dd>

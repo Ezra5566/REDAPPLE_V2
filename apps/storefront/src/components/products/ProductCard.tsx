@@ -63,7 +63,7 @@ export const ProductCard = memo(function ProductCard({
   return (
     <div className="group relative">
       {/* Image */}
-      <div className="relative aspect-square bg-gray-100 dark:bg-gray-800 rounded-md overflow-hidden">
+      <div className="relative aspect-square bg-gray-100 dark:bg-neutral-800 rounded-md overflow-hidden">
         <ProductImage
           src={imageUrl}
           alt={product.name}
@@ -106,14 +106,14 @@ export const ProductCard = memo(function ProductCard({
             <HiddenPricePrompt />
           )}
           {onSale && strikethroughPrice && (
-            <span className="text-sm text-gray-500 dark:text-gray-400 line-through">
+            <span className="text-sm text-gray-500 dark:text-neutral-400 line-through">
               {strikethroughPrice}
             </span>
           )}
         </div>
 
         {!product.purchasable && (
-          <span className="mt-2 text-sm text-gray-500 dark:text-gray-400">{t("outOfStock")}</span>
+          <span className="mt-2 text-sm text-gray-500 dark:text-neutral-400">{t("outOfStock")}</span>
         )}
       </div>
     </div>

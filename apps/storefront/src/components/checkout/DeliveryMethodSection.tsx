@@ -39,7 +39,7 @@ export function DeliveryMethodSection({
       )}
 
       {fulfillments.length === 0 ? (
-        <div className="rounded-sm bg-gray-100 dark:bg-neutral-800 px-4 py-3.5 text-sm text-gray-500 dark:text-gray-400">
+        <div className="rounded-sm bg-gray-100 dark:bg-neutral-800 px-4 py-3.5 text-sm text-gray-500 dark:text-neutral-400">
           {t("enterShippingAddressForMethods")}
         </div>
       ) : (

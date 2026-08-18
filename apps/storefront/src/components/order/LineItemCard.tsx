@@ -16,7 +16,7 @@ export function LineItemCard({ item, basePath }: LineItemCardProps) {
     <div className="flex gap-4">
       <Link
         href={`${basePath}/products/${item.slug}`}
-        className="relative w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden flex-shrink-0"
+        className="relative w-24 h-24 bg-gray-100 dark:bg-neutral-800 rounded-xl overflow-hidden flex-shrink-0"
       >
         <ProductImage
           src={item.thumbnail_url}
@@ -36,9 +36,9 @@ export function LineItemCard({ item, basePath }: LineItemCardProps) {
         </Link>
         <div className="mt-1 text-sm text-gray-900 dark:text-white">{item.display_price}</div>
         {item.options_text && (
-          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{item.options_text}</p>
+          <p className="mt-1 text-xs text-gray-500 dark:text-neutral-400">{item.options_text}</p>
         )}
-        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-xs text-gray-500 dark:text-neutral-400">
           {t("qty", { quantity: item.quantity })}
         </p>
         <Link

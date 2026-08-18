@@ -147,10 +147,9 @@ export function ProductDetails({ product, basePath }: ProductDetailsProps) {
             )}
             {onSale && strikethroughPrice && (
               <>
-                <span className="text-xl text-gray-500 dark:text-gray-400 line-through">
+                <span className="text-xl text-gray-500 dark:text-neutral-400 line-through">
                   {strikethroughPrice}
-                </span>
-                <span className="bg-red-100 text-red-800 text-sm font-medium px-2.5 py-0.5 rounded">
+                </span>                  <span className="bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 text-sm font-medium px-2.5 py-0.5 rounded">
                   {t("sale")}
                 </span>
               </>
@@ -228,13 +227,13 @@ export function ProductDetails({ product, basePath }: ProductDetailsProps) {
 
           {/* Description */}
           {product.description_html && (
-            <div className="mt-10 border-t pt-8">
+            <div className="mt-10 border-t dark:border-neutral-800 pt-8">
               <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
                 {t("description")}
               </h2>
               {/* Description is admin-authored HTML from the Spree CMS backend (trusted source) */}
               <div
-                className="text-gray-600 prose prose-sm max-w-none"
+                className="text-gray-600 dark:text-neutral-300 prose prose-sm prose-p:text-gray-600 dark:prose-p:text-neutral-300 prose-li:text-gray-600 dark:prose-li:text-neutral-300 max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: product.description_html,
                 }}
@@ -246,20 +245,20 @@ export function ProductDetails({ product, basePath }: ProductDetailsProps) {
           <ProductCustomFields customFields={product.custom_fields} />
 
           {/* Product Details */}
-          <div className="mt-8 border-t pt-8">
+          <div className="mt-8 border-t dark:border-neutral-800 pt-8">
             <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
               {t("details")}
             </h2>
             <dl className="space-y-3">
               {sku && (
                 <div className="flex">
-                  <dt className="w-32 text-gray-500 dark:text-gray-400 text-sm">{t("sku")}</dt>
+                  <dt className="w-32 text-gray-500 dark:text-neutral-400 text-sm">{t("sku")}</dt>
                   <dd className="text-gray-900 dark:text-white text-sm">{sku}</dd>
                 </div>
               )}
               {selectedVariant?.options_text && (
                 <div className="flex">
-                  <dt className="w-32 text-gray-500 dark:text-gray-400 text-sm">{t("options")}</dt>
+                  <dt className="w-32 text-gray-500 dark:text-neutral-400 text-sm">{t("options")}</dt>
                   <dd className="text-gray-900 dark:text-white text-sm">
                     {selectedVariant.options_text}
                   </dd>
