@@ -33,6 +33,11 @@ export function DocumentShell({ children, locale }: DocumentShellProps) {
     <html lang={locale} dir={localeDirection(locale)} suppressHydrationWarning>
       {/* biome-ignore lint/style/noHeadElement: this shell is used only by Next.js root layouts */}
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#dc2626" />
         {spreeApiOrigin && (
           <>
             <link rel="preconnect" href={spreeApiOrigin} />
