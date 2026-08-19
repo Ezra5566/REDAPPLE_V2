@@ -34,9 +34,9 @@ export async function FeaturedProductsSection({
   });
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 featured-products">
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 featured-products">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
           {t("featuredProducts")}
         </h2>
         <Button variant="link" asChild>
