@@ -48,6 +48,9 @@ gem 'spree_i18n'
 gem 'spree_stripe'
 gem 'spree_adyen'
 gem 'spree_paypal_checkout'
+gem 'spree_mpesa',
+  git: 'https://github.com/truehostcloud/spree_mpesa.git',
+  tag: 'v1.0.2'
 
 # Rails & Infrastructure
 gem 'aws-sdk-s3', require: false

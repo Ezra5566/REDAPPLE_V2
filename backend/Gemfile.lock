@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/truehostcloud/spree_mpesa.git
+  revision: 4534030fbfba97afb694379a60b731f522062e5b
+  tag: v1.0.2
+  specs:
+    spree_mpesa (1.0.2)
+      httparty (>= 0.17, < 1.0)
+      spree (>= 5.0, < 6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -913,6 +922,7 @@ DEPENDENCIES
   spree_dev_tools
   spree_emails (>= 5.6.0.rc1)
   spree_i18n
+  spree_mpesa!
   spree_paypal_checkout
   spree_stripe
   stimulus-rails
@@ -1184,6 +1194,7 @@ CHECKSUMS
   spree_emails (5.6.1) sha256=a76f3b665f31d139670e8a9813fbb50a879d542e01d34d23e60c5057f72fbf18
   spree_extension (1.0.2) sha256=71725dafe45319a2be1bd2b564a416afe8029af8e18ac703bdb835e09553e1df
   spree_i18n (5.3.3) sha256=e2b75d3174a70d626503827e7fefb3595f92ee41e356dd05a066ced39d562102
+  spree_mpesa (1.0.2)
   spree_paypal_checkout (0.7.1) sha256=89a5715a3b23b2ac04a27ddfd12416101fab03996cf70826d35dedef3bb4b9de
   spree_stripe (1.8.1) sha256=4d7971406a2f5e79c260662086be5857178c13a33eef01f101761fc0a1494ed0
   sqids (0.2.2) sha256=c2d31e0dfb6c32d17c10b59df059a299af93bef716d700ff70d77156df702d36
