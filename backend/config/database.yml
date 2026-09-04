@@ -24,3 +24,11 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+  # Hard ceiling on the per-process pool so total connections across Puma and
+  # the forked Solid Queue children stay under the database's session cap
+  # (Supabase session pooler: 15). Raise with DB_POOL_CAP if you move to a
+  # transaction pooler or a higher-tier database.
+  pool: <%= [
+    Integer(ENV.fetch("RAILS_MAX_THREADS", 3)) + Integer(ENV.fetch("JOB_THREADS", 3)) + 3,
+    Integer(ENV.fetch("DB_POOL_CAP", 6))
+  ].min %>
