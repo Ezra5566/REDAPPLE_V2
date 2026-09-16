@@ -32,11 +32,15 @@ interface FeaturedProductsProps {
 /**
  * Which products show in the homepage "Featured" section.
  *
- * Opt-in, no backend changes: when NEXT_PUBLIC_FEATURED_CATEGORY_PERMALINK is
- * set to the permalink of a dedicated "Featured" category (created in the
- * Spree admin), the section lists the products in that category, newest first.
- * The admin picks featured items purely by adding/removing products to that
- * category.
+ * Opt-in, no backend changes. Set the private server-side env var
+ * `FEATURED_CATEGORY_PERMALINK` (do NOT use a NEXT_PUBLIC_ prefix — the value
+ * is only needed on the server and Vercel rejects a public prefix here) to the
+ * permalink of a dedicated "Featured" category created in the Spree admin.
+ * The env var must be configured in the Vercel project's Environment
+ * Variables (Production), not in a committed .env.local — that file is
+ * git-ignored and is never shipped to the deployment.
+ * The admin then picks featured items purely by adding/removing products to
+ * that category.
  *
  * When the env var is unset, the category is missing, or it has no products,
  * we fall back to the catalog's default 8 so the section is never empty.
@@ -48,7 +52,7 @@ async function fetchFeaturedProducts(
 ): Promise<Product[]> {
   const base = { locale, country };
 
-  const permalink = process.env.NEXT_PUBLIC_FEATURED_CATEGORY_PERMALINK?.trim();
+  const permalink = process.env.FEATURED_CATEGORY_PERMALINK?.trim();
   if (permalink) {
     try {
       const category = await getCategory(permalink);
